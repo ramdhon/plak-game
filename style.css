@@ -12,8 +12,18 @@ body {
 
 .playerName {grid-area: playerName;}
 .computerName {grid-area: computerName;}
-.playerBar {grid-area: playerBar;}
-.computerBar {grid-area: computerBar;}
+.playerBar {
+    grid-area: playerBar;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(173, 103, 56);
+    padding: 5px;
+}
+.computerBar {
+    grid-area: computerBar;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(173, 103, 56);
+    padding: 5px;
+}
 .damage {grid-area: damage;}
 .damageValue {grid-area: damageValue;}
 .grid_health-bar_container {
@@ -58,4 +68,25 @@ body {
     background-color: rgb(173, 103, 56);
     color: white;
     cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .grid_health-bar_container {
+        /* background-color: rgb(173, 103, 56);
+        display: grid; */
+        grid-template-areas:
+            "playerName"
+            "playerBar"
+            "computerName"
+            "computerBar"
+            "damage"
+            "damageValue";
+        /* grid-gap: 10px;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        font-size: 28px; */
+    }
+
+
 }
