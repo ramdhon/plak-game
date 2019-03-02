@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Plak With Fun</title>
+        <link href="style.css" type="text/css" rel=stylesheet>
+    </head>
+    <body>
+        <div class="blank_space"></div>
+        <div class="grid_health-bar_container">
+            <div class="playerName" id="playerName">YOU</div>
+            <div class="computerName" id="computerName">COMPUTER</div>
+            <div class="playerBar" id="playerBar">100 / 100</div>
+            <div class="computerBar" id="computerBar">100 / 100</div>
+            <div class="damage" id="damage"></div>
+            <div class="damageValue" id="damageValue"></div>
+        </div>
+
+        <div class="blank_space"></div>
+
+        <div class="status">
+            <div id="playerStatus">This is Your Status</div>
+            <div class="blank_space"></div>
+            <div id="computerStatus">This is Computer Status</div>
+        </div>
+
+        <div class="blank_space"></div>
+        <div id="play" onclick="toPlay('play')">PLAY</div>
+        <div class="blank_space"></div>
+        
+        <h3 id="attacking">ATTACK!</h3>
+        <div class="attacking">
+            <div id="attack" onclick="inputClick('attack')">ATTACK!</div>
+            <div id="snap" onclick="inputClick('snap')">SNAP!</div>
+        </div>
+
+        <h3 id="defending">DEFEND!</h3>
+        <div class="defending">
+            <div id="stay" onclick="inputClick('staystill')">STAYSTILL</div>
+            <div id="dodge" onclick="inputClick('dodge')">DODGE</div>
+        </div>
+        
+        <div class="blank_space"></div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
