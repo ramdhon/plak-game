@@ -1,4 +1,12 @@
-function toPlay(input) {
+function toHelp() {
+    document.getElementById("helpWindow").style.visibility = "visible";
+}
+
+function toClose() {
+    document.getElementById("helpWindow").style.visibility = "hidden";
+}
+
+function toPlay() {
     document.getElementById("damage").innerHTML = "Current Damage";
     document.getElementById("damageValue").innerHTML = damageGenerator();
     document.getElementById("playerBar").innerHTML = "100 / 100";

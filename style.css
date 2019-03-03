@@ -22,11 +22,36 @@ body {
 .playerH {
     background-color: rgba(0, 255, 0, 0.5);
     width: 100%;
-    height: 100%; /*itung manual*/
+    height: 100%; 
     position: absolute;
     top: 0px;
     left: 0px;
 }
+
+.playerName, .computerName {
+    width: 100%;
+    height: 32px; /*itung manual*/
+    position: relative;
+    box-sizing: border-box;
+}
+#playerName, #computerName {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.playerBar, .computerBar {
+    width: 100%;
+    height: 42px; /*itung manual*/
+    box-sizing: border-box;
+}
+#playerBar, #computerBar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .computerBar {
     grid-area: computerBar;
     background-color: rgba(255, 255, 255, 0.5);
@@ -51,8 +76,8 @@ body {
     background-color: rgb(173, 103, 56);
     display: grid;
     grid-template-areas:
-        "playerName playerName damage computerName computerName"
-        "playerBar playerBar damageValue computerBar computerBar";
+        "playerName playerName playerName playerName damage computerName computerName computerName computerName"
+        "playerBar playerBar playerBar playerBar damageValue computerBar computerBar computerBar computerBar";
     grid-gap: 10px;
     padding: 10px;
     text-align: center;
@@ -68,10 +93,10 @@ body {
     background-color: white;
 }
 
-#play {
-    margin: 20px 0 auto;
+#play, #help {
+    margin: 20px 10px 0 10px;
     display: inline-block;
-    width: 150px;
+    width: 120px;
     border: 5px solid rgb(173, 103, 56);
     border-radius: 50%;
     padding: 10px;
@@ -90,12 +115,40 @@ body {
     color: white;
 }
 
-#play:hover, #attack:hover, #snap:hover, #stay:hover, #dodge:hover {
+#play:hover, #help:hover, #attack:hover, #snap:hover, #stay:hover, #dodge:hover {
     background-color: rgba(173, 103, 56, 0);
     color: rgb(173, 103, 56);
     cursor: pointer;
 }
 
+#helpWindow {
+    width: 380px;
+    height: 500px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius : 10px;
+    padding: 20px;
+    text-align: left;
+    font-size: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden; 
+}
+#close{
+    top: 0px;
+    right: 0px;
+    transform: translate(0, 0);
+    padding: 5px;
+    position: absolute;
+}
+#close:hover {
+    background-color: rgba(173, 103, 56, 0.7);
+    border-bottom-left-radius: 10px;
+    color: white;
+    cursor: pointer; 
+}
 @media only screen and (max-width: 768px){
     .damage {
         padding: 38px 0 0; /*itung manual*/
@@ -107,6 +160,14 @@ body {
     .computerH {
         left: 0px;
     }
+
+    .playerName, .computerName {
+        height: 23px;
+    }
+    .playerBar, .computerBar {
+        height: 33px;
+    }
+
     .grid_health-bar_container {
         grid-template-areas:
             "damage playerName playerName playerName playerName playerName"
@@ -123,12 +184,10 @@ body {
     #playerStatus, #computerStatus {
         width: 250px;
     }
-    #play {
-        margin: 10px 0 auto;
-        display: inline-block;
-        width: 120px;
+    #play, #help {
+        margin: 10px 7px 0 7px;
+        width: 100px;
         border: 3px solid rgb(173, 103, 56);
-        border-radius: 50%;
         padding: 5px;
         font-size: 20px;
     }
@@ -137,6 +196,5 @@ body {
         width: 100px;
         border: 3px solid rgb(173, 103, 56);
         border-radius: 15px;
-        padding: 5px;
     }
 }

@@ -10,8 +10,12 @@
     <body>
         <div class="blank_space"></div>
         <div class="grid_health-bar_container">
-            <div class="playerName" id="playerName">YOU</div>
-            <div class="computerName" id="computerName">COM</div>
+            <div class="playerName">
+                <span id="playerName">YOU</span>
+            </div>
+            <div class="computerName">
+                <span id="computerName">COMPUTER</span>
+            </div>
             <div class="playerBar">
                 <div class="playerH" id="playerH"></div>
                 <span id="playerBar">100 / 100</span>
@@ -34,8 +38,10 @@
         </div>
 
         <div class="blank_space"></div>
-        <div id="play" onclick="toPlay('play')">PLAY</div>
+        <div id="play" onclick="toPlay()">PLAY</div>
         
+        <div id="help" onclick="toHelp()">HELP?</div>
+
         <h3 id="attacking">ATTACK!</h3>
         <div class="attacking">
             <div id="attack" onclick="inputClick('attack')">ATTACK!</div>
@@ -50,6 +56,22 @@
         
         <div class="blank_space"></div>
 
+        <div class="help" id="helpWindow">
+            <span id="close" onclick="toClose()">X Close</span>
+            <strong>CARA BERMAIN:</strong>
+            <ul>
+                <li>Pada awal permainan, kamu akan memulai dahulu permainan dengan menyerang musuh</li>
+                <li>Dekat <strong>"Health Bar"</strong> masing-masing pemain terdapat besarnya "damage" yang akan diberikan kepada musuh</li>
+                <li>Untuk penyerangan, terdapat 2 pilihan <strong>"Attack"</strong> dan <strong>"Snap"</strong></li>
+                <li>Setiap <strong>"Attack"</strong> jika musuh <strong>"Dodge"</strong> maka akan bergantian menyerang</li>
+                <li>Setiap <strong>"Attack"</strong> jika musuh <strong>"Staystill"</strong> maka "damage" yang akan diberikan sesuai <strong>"Current Damage"</strong></li>
+                <li>Setiap <strong>"Snap"</strong> jika musuh <strong>"Dodge"</strong> maka "damage" yang akan diberikan </strong>2 KALI "Current Damage"</strong> (hati-hati)</li>
+                <li>Setiap <strong>"Snap"</strong> jika musuh <strong>"Staystill"</strong> maka akan bergantian menyerang</li>
+                <li>Selalu waspada dengan kondisi <strong>"Health Bar"</strong> dan <strong>"Current Damage"</strong></li>
+                <li>Bagi pemain yang berhasil <strong>mematikan musuh</strong> terlebih dahulu, dialah yang jadi <strong>PEMENANG</strong></li>
+                <li><strong>SELAMAT BERMAIN!</strong></li>
+            </ul>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>
