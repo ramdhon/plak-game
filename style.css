@@ -84,6 +84,7 @@ body {
     }
     .damageValue {
         padding: auto;
+        font-size: 24px;
     }
     .grid_health-bar_container {
         grid-template-areas:
