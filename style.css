@@ -80,10 +80,10 @@ body {
 
 @media only screen and (max-width: 768px){
     .damage {
-        padding: auto;
+        padding: 40px 0 0; /*itung manual*/
     }
     .damageValue {
-        padding: auto;
+        padding: 0;
         font-size: 24px;
     }
     .grid_health-bar_container {
@@ -99,6 +99,9 @@ body {
     body {
         font-size: 16px;
     }
+    #playerStatus, #computerStatus {
+        width: 250px;
+    }
     #play {
         margin: 10px 0 auto;
         display: inline-block;
@@ -112,7 +115,7 @@ body {
         margin: 0 12px;
         width: 100px;
         border: 3px solid rgb(173, 103, 56);
-        border-radius: 10px;
+        border-radius: 15px;
         padding: 5px;
     }
 }
