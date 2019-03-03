@@ -25,13 +25,16 @@ body {
     padding: 5px;
 }
 .damage {grid-area: damage;}
-.damageValue {grid-area: damageValue;}
+.damageValue {
+    grid-area: damageValue;
+    padding: 5px;
+}
 .grid_health-bar_container {
     background-color: rgb(173, 103, 56);
     display: grid;
     grid-template-areas:
-        "playerName damage computerName"
-        "playerBar damageValue computerBar";
+        "playerName playerName damage computerName computerName"
+        "playerBar playerBar damageValue computerBar computerBar";
     grid-gap: 10px;
     padding: 10px;
     text-align: center;
@@ -42,51 +45,73 @@ body {
 #playerStatus, #computerStatus {
     margin: 0 auto;
     width: 300px;
-    border: 5px solid rgb(173, 103, 56);
-    padding: 10px;
+    border: 3px solid rgb(173, 103, 56);
+    padding: 5px;
     background-color: white;
 }
 
 #play {
     margin: 20px 0 auto;
     display: inline-block;
-    width: 100px;
-    border: 3px solid rgb(173, 103, 56);
+    width: 150px;
+    border: 5px solid rgb(173, 103, 56);
     border-radius: 50%;
     padding: 10px;
+    font-size: 28px;
+    background-color: rgb(173, 103, 56);
+    color: white;
 }
 #attack, #snap, #stay, #dodge {
-    margin: 0 20px;
+    margin: 0 12px;
     display: inline-block;
     width: 125px;
     border: 5px solid rgb(173, 103, 56);
     border-radius: 20px;
-    padding: 10px;
+    padding: 5px;
+    background-color: rgb(173, 103, 56);
+    color: white;
 }
 
 #play:hover, #attack:hover, #snap:hover, #stay:hover, #dodge:hover {
-    background-color: rgb(173, 103, 56);
-    color: white;
+    background-color: rgba(173, 103, 56, 0);
+    color: rgb(173, 103, 56);
     cursor: pointer;
 }
 
 @media only screen and (max-width: 768px){
-    .grid_health-bar_container {
-        /* background-color: rgb(173, 103, 56);
-        display: grid; */
-        grid-template-areas:
-            "playerName"
-            "playerBar"
-            "computerName"
-            "computerBar"
-            "damage"
-            "damageValue";
-        /* grid-gap: 10px;
-        padding: 10px;
-        text-align: center;
-        color: white;
-        font-size: 28px; */
+    .damage {
+        padding: auto;
     }
-
-
+    .damageValue {
+        padding: auto;
+    }
+    .grid_health-bar_container {
+        grid-template-areas:
+            "damage playerName playerName playerName playerName playerName"
+            "damage playerBar playerBar playerBar playerBar playerBar"
+            "damageValue computerName computerName computerName computerName computerName"
+            "damageValue computerBar computerBar computerBar computerBar computerBar";
+        grid-gap: 5px;
+        padding: 5px;
+        font-size: 20px;
+    }
+    body {
+        font-size: 16px;
+    }
+    #play {
+        margin: 10px 0 auto;
+        display: inline-block;
+        width: 120px;
+        border: 3px solid rgb(173, 103, 56);
+        border-radius: 50%;
+        padding: 5px;
+        font-size: 20px;
+    }
+    #attack, #snap, #stay, #dodge {
+        margin: 0 12px;
+        width: 100px;
+        border: 3px solid rgb(173, 103, 56);
+        border-radius: 10px;
+        padding: 5px;
+    }
 }

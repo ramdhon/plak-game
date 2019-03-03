@@ -55,6 +55,19 @@ function inputClick(input) {
                 player = players[0];
                 com = players[1];
                 attacking = players[2];
+
+                if (player.Health <= 0) {
+                    player.Health = 0;
+                    document.getElementById("playerStatus").innerHTML = "YOU LOSE!";
+                    document.getElementById("computerStatus").innerHTML = "COMPUTER WIN!"; 
+                    document.getElementById("play").innerHTML = "REPLAY";
+                }
+                if (com.Health <= 0) {
+                    com.Health = 0;
+                    document.getElementById("playerStatus").innerHTML = "YOU WIN!";
+                    document.getElementById("computerStatus").innerHTML = "COMPUTER LOSE!"; 
+                    document.getElementById("play").innerHTML = "REPLAY";
+                }
         
                 document.getElementById("playerBar").innerHTML = player.Health + " / 100";
                 document.getElementById("computerBar").innerHTML = com.Health + " / 100";
@@ -143,7 +156,13 @@ function defense(defenseCase) {
 }
 
 function damageGenerator() {
-    return Math.round(Math.random() * 40);
+    var highProb = Math.round(Math.random() * 3);
+
+    if(Math.round(Math.random() * 3) === 3) {
+        return Math.round(Math.random() * 20) + 70;    
+    } else {
+        return Math.round(Math.random() * 40);
+    }
 }
 
 function attackCaseGenerator(attackCase) {
