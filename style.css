@@ -17,12 +17,30 @@ body {
     background-color: rgba(255, 255, 255, 0.5);
     color: rgb(173, 103, 56);
     padding: 5px;
+    position: relative;
+}
+.playerH {
+    background-color: rgba(0, 255, 0, 0.5);
+    width: 100%;
+    height: 42px; /*itung manual*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 .computerBar {
     grid-area: computerBar;
     background-color: rgba(255, 255, 255, 0.5);
     color: rgb(173, 103, 56);
     padding: 5px;
+    position: relative;
+}
+.computerH {
+    background-color: rgba(0, 255, 0, 0.5);
+    width: 100%;
+    height: 42px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 .damage {grid-area: damage;}
 .damageValue {
@@ -85,6 +103,12 @@ body {
     .damageValue {
         padding: 0;
         font-size: 24px;
+    }
+    .playerH {
+        height: 34px;
+    }
+    .computerH {
+        height: 34px;
     }
     .grid_health-bar_container {
         grid-template-areas:

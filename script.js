@@ -2,7 +2,11 @@ function toPlay(input) {
     document.getElementById("damage").innerHTML = "Current Damage";
     document.getElementById("damageValue").innerHTML = damageGenerator();
     document.getElementById("playerBar").innerHTML = "100 / 100";
+    document.getElementById("playerH").style.width = "100%";
+    document.getElementById("playerH").style["background-color"] = "rgba(0, 255, 0, 0.5)";
+    document.getElementById("computerH").style["background-color"] = "rgba(0, 255, 0, 0.5)";
     document.getElementById("computerBar").innerHTML = "100 / 100";
+    document.getElementById("computerH").style.width = "100%";
     document.getElementById("playerStatus").innerHTML = "This is Your Status";
     document.getElementById("computerStatus").innerHTML = "This is Computer Status";
     document.getElementById("play").innerHTML = "RESET";
@@ -70,7 +74,21 @@ function inputClick(input) {
                 }
         
                 document.getElementById("playerBar").innerHTML = player.Health + " / 100";
+                document.getElementById("playerH").style.width = player.Health + "%";
+                if (player.Health < 60) {
+                    document.getElementById("playerH").style["background-color"] = "rgba(255, 255, 0, 0.5)";
+                }
+                if (player.Health < 30) {
+                    document.getElementById("playerH").style["background-color"] = "rgba(255, 0, 0, 0.5)";
+                }
                 document.getElementById("computerBar").innerHTML = com.Health + " / 100";
+                document.getElementById("computerH").style.width = com.Health + "%";
+                if (com.Health < 60) {
+                    document.getElementById("computerH").style["background-color"] = "rgba(255, 255, 0, 0.5)";
+                }
+                if (com.Health < 30) {
+                    document.getElementById("computerH").style["background-color"] = "rgba(255, 0, 0, 0.5)";
+                }
             } 
         } else {
             if (player.Input === "attack" || player.Input === "snap") {
@@ -103,7 +121,21 @@ function inputClick(input) {
                 }
                 
                 document.getElementById("playerBar").innerHTML = player.Health + " / 100";
+                document.getElementById("playerH").style.width = player.Health + "%";
+                if (player.Health < 60) {
+                    document.getElementById("playerH").style["background-color"] = "rgba(255, 255, 0, 0.5)";
+                }
+                if (player.Health < 30) {
+                    document.getElementById("playerH").style["background-color"] = "rgba(255, 0, 0, 0.5)";
+                }
                 document.getElementById("computerBar").innerHTML = com.Health + " / 100";
+                document.getElementById("computerH").style.width = com.Health + "%";
+                if (com.Health < 60) {
+                    document.getElementById("computerH").style["background-color"] = "rgba(255, 255, 0, 0.5)";
+                }
+                if (com.Health < 30) {
+                    document.getElementById("computerH").style["background-color"] = "rgba(255, 0, 0, 0.5)";
+                }
             }
         }
 
