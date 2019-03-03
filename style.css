@@ -104,8 +104,8 @@ body {
         padding: 0;
         font-size: 24px;
     }
-    .playerH, .computerH {
-        height: 100%;
+    .computerH {
+        left: 0px;
     }
     .grid_health-bar_container {
         grid-template-areas:
